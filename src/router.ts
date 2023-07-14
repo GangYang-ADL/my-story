@@ -4,22 +4,22 @@ export const routes: RouteRecordRaw[] = [
   {
     name: 'home',
     path: '/',
-    component: () => import('./pages/Home/Home.vue'),
+    component: () => import('@/pages/Home/Home.vue'),
   },
   {
-    name: 'experience',
-    path: '/experience',
-    component: () => import('./pages/Experience/Experience.vue'),
+    name: 'experiences',
+    path: '/experiences',
+    component: () => import('@/pages/Experiences/Experiences.vue'),
   },
   {
     name: 'skills',
     path: '/skills',
-    component: () => import('./pages/Skills/Skills.vue'),
+    component: () => import('@/pages/Skills/Skills.vue'),
   },
   {
-    name: 'life',
-    path: '/life',
-    component: () => import('./pages/Life/Life.vue'),
+    name: 'hobbies',
+    path: '/hobbies',
+    component: () => import('@/pages/Hobbies/Hobbies.vue'),
   },
   {
     // Redirect to home if route not matched
