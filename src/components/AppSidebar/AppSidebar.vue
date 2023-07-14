@@ -3,15 +3,22 @@ import HomeIcon from '@/assets/sidebar-icon/home.svg'
 import ExperiencesIcon from '@/assets/sidebar-icon/experiences.svg'
 import SkillsIcon from '@/assets/sidebar-icon/skills.svg'
 import LifeIcon from '@/assets/sidebar-icon/life.svg'
+import AppSidebarFooter from './AppSidebarFooter.vue'
 import { ref } from 'vue'
 
 let isMobileMode = ref(false)
-const toggleSidebar = () => {
+let isDarkMode = ref(false)
+
+const handleSidebarStatusChange = () => {
   isMobileMode.value = !isMobileMode.value
   const sidebar = document.getElementById('default-sidebar')
   if (sidebar) {
     sidebar.classList.toggle('-translate-x-full')
   }
+}
+
+const handleThemeChange = (val: boolean) => {
+  isDarkMode.value = val
 }
 </script>
 
@@ -21,8 +28,13 @@ const toggleSidebar = () => {
     data-drawer-toggle="default-sidebar"
     aria-controls="default-sidebar"
     type="button"
-    class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-    @click="toggleSidebar"
+    class="inline-flex items-center p-2 mt-2 ml-3 text-sm rounded-lg sm:hidden focus:outline-none focus:ring-2"
+    :class="
+      isDarkMode
+        ? 'text-gray-400 hover:bg-gray-700 focus:ring-gray-600'
+        : 'text-gray-500 hover:bg-gray-100 focus:ring-gray-200'
+    "
+    @click="handleSidebarStatusChange"
   >
     <span class="sr-only">Open sidebar</span>
     <svg
@@ -45,12 +57,18 @@ const toggleSidebar = () => {
     class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
     aria-label="Sidebar"
   >
-    <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+    <div
+      class="h-full px-3 py-4 overflow-y-autoflex flex flex-col"
+      :class="isDarkMode ? 'bg-gray-800' : 'bg-gray-50'"
+    >
       <ul class="space-y-2 font-medium">
         <li>
           <router-link
             :to="{ name: 'home' }"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 group"
+            class="flex items-center p-2 rounded-lg group"
+            :class="
+              isDarkMode ? 'hover:bg-gray-700 text-white' : 'hover:bg-gray-300  text-gray-900'
+            "
           >
             <HomeIcon class="w-5 h-5" />
             <span class="ml-3">HOME</span>
@@ -58,8 +76,11 @@ const toggleSidebar = () => {
         </li>
         <li>
           <router-link
-            :to="{ name: 'experience' }"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 group"
+            :to="{ name: 'experiences' }"
+            class="flex items-center p-2 rounded-lg group"
+            :class="
+              isDarkMode ? 'hover:bg-gray-700 text-white' : 'hover:bg-gray-300  text-gray-900'
+            "
           >
             <ExperiencesIcon class="w-5 h-5" />
             <span class="flex-1 ml-3 whitespace-nowrap">EXP</span>
@@ -67,30 +88,38 @@ const toggleSidebar = () => {
         </li>
         <li>
           <router-link
-            :to="{ name: 'skill' }"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 group"
+            :to="{ name: 'skills' }"
+            class="flex items-center p-2 rounded-lg group"
+            :class="
+              isDarkMode ? 'hover:bg-gray-700 text-white' : 'hover:bg-gray-300  text-gray-900'
+            "
           >
             <SkillsIcon class="w-5 h-5" />
-            <span class="flex-1 ml-3 whitespace-nowrap">SKILL</span>
+            <span class="flex-1 ml-3 whitespace-nowrap">SKILLS</span>
           </router-link>
         </li>
         <li>
           <router-link
-            :to="{ name: 'life' }"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 group"
+            :to="{ name: 'hobbies' }"
+            class="flex items-center p-2 rounded-lg group"
+            :class="
+              isDarkMode ? 'hover:bg-gray-700 text-white' : 'hover:bg-gray-300  text-gray-900'
+            "
           >
             <LifeIcon class="w-5 h-5" />
-            <span class="flex-1 ml-3 whitespace-nowrap">LIFE</span>
+            <span class="flex-1 ml-3 whitespace-nowrap">HOBBIES</span>
           </router-link>
         </li>
       </ul>
+      <div class="text-center mt-auto">
+        <AppSidebarFooter @changeTheme="handleThemeChange" />
+      </div>
     </div>
   </aside>
   <div
     v-if="isMobileMode"
-    class="fixed inset-0 bg-gray-900 bg-opacity-50 z-30 transition-opacity"
-    @click="toggleSidebar"
+    class="fixed inset-0 z-30 transition-opacity"
+    :class="isMobileMode ? 'bg-white-900 bg-opacity-50' : 'bg-gray-900 bg-opacity-50'"
+    @click="handleSidebarStatusChange"
   ></div>
 </template>
-
-<style></style>
