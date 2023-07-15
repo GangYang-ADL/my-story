@@ -2,14 +2,19 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 export const routes: RouteRecordRaw[] = [
   {
-    name: 'home',
-    path: '/',
-    component: () => import('@/pages/Home/Home.vue'),
+    name: 'about',
+    path: '/about',
+    component: () => import('@/pages/About/About.vue'),
   },
   {
     name: 'experiences',
     path: '/experiences',
     component: () => import('@/pages/Experiences/Experiences.vue'),
+  },
+  {
+    name: 'projects',
+    path: '/projects',
+    component: () => import('@/pages/Projects/Projects.vue'),
   },
   {
     name: 'skills',
@@ -22,10 +27,10 @@ export const routes: RouteRecordRaw[] = [
     component: () => import('@/pages/Hobbies/Hobbies.vue'),
   },
   {
-    // Redirect to home if route not matched
+    // Redirect to about me page if route not matched
     path: '/:pathMatch(.*)*',
     redirect: () => {
-      return { name: 'home' }
+      return { name: 'about' }
     },
   },
 ]

@@ -4,10 +4,10 @@ import AppSidebar from './components/AppSidebar/AppSidebar.vue'
 
 <template>
   <div class="flex flex-col md:flex-row">
-    <div class="w-64 bg-gray-50 dark:bg-gray-800">
+    <div class="bg-gray-50 md:w-64">
       <AppSidebar />
     </div>
-    <div class="flex-grow bg-white dark:bg-gray-900 pt-5 ml-5">
+    <div class="min-w-0 flex-grow overflow-auto bg-white">
       <router-view />
     </div>
   </div>
