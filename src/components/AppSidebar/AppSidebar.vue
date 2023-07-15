@@ -1,25 +1,36 @@
 <script setup lang="ts">
-import HomeIcon from '@/assets/sidebar-icon/home.svg'
+import AboutMeIcon from '@/assets/sidebar-icon/aboutme.svg'
 import ExperiencesIcon from '@/assets/sidebar-icon/experiences.svg'
 import SkillsIcon from '@/assets/sidebar-icon/skills.svg'
 import LifeIcon from '@/assets/sidebar-icon/life.svg'
+import ProjectsIcon from '@/assets/sidebar-icon/projects.svg'
+import AppSidebarHeader from './AppSidebarHeader.vue'
 import AppSidebarFooter from './AppSidebarFooter.vue'
-import { ref } from 'vue'
+import { ref, onBeforeUnmount } from 'vue'
 
+let isSidebarOpen = ref(false)
 let isMobileMode = ref(false)
-let isDarkMode = ref(false)
 
 const handleSidebarStatusChange = () => {
-  isMobileMode.value = !isMobileMode.value
+  isSidebarOpen.value = !isSidebarOpen.value
   const sidebar = document.getElementById('default-sidebar')
   if (sidebar) {
     sidebar.classList.toggle('-translate-x-full')
   }
 }
 
-const handleThemeChange = (val: boolean) => {
-  isDarkMode.value = val
+const mediaQuery = window.matchMedia('(max-width: 767px)')
+
+const handleDeviceModeChange = () => {
+  isMobileMode.value = mediaQuery.matches
 }
+
+mediaQuery.addEventListener('change', handleDeviceModeChange)
+handleDeviceModeChange()
+
+onBeforeUnmount(() => {
+  mediaQuery.removeEventListener('change', handleDeviceModeChange)
+})
 </script>
 
 <template>
@@ -28,17 +39,12 @@ const handleThemeChange = (val: boolean) => {
     data-drawer-toggle="default-sidebar"
     aria-controls="default-sidebar"
     type="button"
-    class="inline-flex items-center p-2 mt-2 ml-3 text-sm rounded-lg sm:hidden focus:outline-none focus:ring-2"
-    :class="
-      isDarkMode
-        ? 'text-gray-400 hover:bg-gray-700 focus:ring-gray-600'
-        : 'text-gray-500 hover:bg-gray-100 focus:ring-gray-200'
-    "
+    class="ml-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 sm:hidden"
     @click="handleSidebarStatusChange"
   >
     <span class="sr-only">Open sidebar</span>
     <svg
-      class="w-6 h-6"
+      class="h-6 w-6"
       aria-hidden="true"
       fill="currentColor"
       viewBox="0 0 20 20"
@@ -54,72 +60,71 @@ const handleThemeChange = (val: boolean) => {
 
   <aside
     id="default-sidebar"
-    class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+    class="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full transition-transform sm:translate-x-0"
     aria-label="Sidebar"
   >
-    <div
-      class="h-full px-3 py-4 overflow-y-autoflex flex flex-col"
-      :class="isDarkMode ? 'bg-gray-800' : 'bg-gray-50'"
-    >
+    <div class="overflow-y-autoflex flex h-full flex-col divide-y-2 bg-gray-50 px-3 py-4">
+      <AppSidebarHeader />
       <ul class="space-y-2 font-medium">
         <li>
           <router-link
-            :to="{ name: 'home' }"
-            class="flex items-center p-2 rounded-lg group"
-            :class="
-              isDarkMode ? 'hover:bg-gray-700 text-white' : 'hover:bg-gray-300  text-gray-900'
-            "
+            :to="{ name: 'about' }"
+            @click="handleSidebarStatusChange"
+            class="group mt-2 flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-200 hover:ring-2 hover:ring-green-500"
           >
-            <HomeIcon class="w-5 h-5" />
-            <span class="ml-3">HOME</span>
+            <AboutMeIcon class="h-5 w-5" />
+            <span class="ml-3">About</span>
           </router-link>
         </li>
         <li>
           <router-link
             :to="{ name: 'experiences' }"
-            class="flex items-center p-2 rounded-lg group"
-            :class="
-              isDarkMode ? 'hover:bg-gray-700 text-white' : 'hover:bg-gray-300  text-gray-900'
-            "
+            @click="handleSidebarStatusChange"
+            class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-200 hover:ring-2 hover:ring-green-500"
           >
-            <ExperiencesIcon class="w-5 h-5" />
-            <span class="flex-1 ml-3 whitespace-nowrap">EXP</span>
+            <ExperiencesIcon class="h-5 w-5" />
+            <span class="ml-3 flex-1 whitespace-nowrap">Experience</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            :to="{ name: 'projects' }"
+            @click="handleSidebarStatusChange"
+            class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-200 hover:ring-2 hover:ring-green-500"
+          >
+            <ProjectsIcon class="h-5 w-5" />
+            <span class="ml-3 flex-1 whitespace-nowrap">Projects</span>
           </router-link>
         </li>
         <li>
           <router-link
             :to="{ name: 'skills' }"
-            class="flex items-center p-2 rounded-lg group"
-            :class="
-              isDarkMode ? 'hover:bg-gray-700 text-white' : 'hover:bg-gray-300  text-gray-900'
-            "
+            @click="handleSidebarStatusChange"
+            class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-200 hover:ring-2 hover:ring-green-500"
           >
-            <SkillsIcon class="w-5 h-5" />
-            <span class="flex-1 ml-3 whitespace-nowrap">SKILLS</span>
+            <SkillsIcon class="h-5 w-5" />
+            <span class="ml-3 flex-1 whitespace-nowrap">Skills</span>
           </router-link>
         </li>
         <li>
           <router-link
             :to="{ name: 'hobbies' }"
-            class="flex items-center p-2 rounded-lg group"
-            :class="
-              isDarkMode ? 'hover:bg-gray-700 text-white' : 'hover:bg-gray-300  text-gray-900'
-            "
+            @click="handleSidebarStatusChange"
+            class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-200 hover:ring-2 hover:ring-green-500"
           >
-            <LifeIcon class="w-5 h-5" />
-            <span class="flex-1 ml-3 whitespace-nowrap">HOBBIES</span>
+            <LifeIcon class="h-5 w-5" />
+            <span class="ml-3 flex-1 whitespace-nowrap">Hobbies</span>
           </router-link>
         </li>
       </ul>
-      <div class="text-center mt-auto">
-        <AppSidebarFooter @changeTheme="handleThemeChange" />
+      <div class="mt-auto text-center">
+        <AppSidebarFooter />
       </div>
     </div>
   </aside>
   <div
-    v-if="isMobileMode"
-    class="fixed inset-0 z-30 transition-opacity"
-    :class="isMobileMode ? 'bg-white-900 bg-opacity-50' : 'bg-gray-900 bg-opacity-50'"
+    v-if="isMobileMode && isSidebarOpen"
+    class="fixed inset-0 z-30 bg-gray-900 bg-opacity-50 transition-opacity"
     @click="handleSidebarStatusChange"
   ></div>
 </template>

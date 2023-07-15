@@ -6,7 +6,7 @@ import PageHeader from '@/components/PageHeader/PageHeader.vue'
   <div class="flex h-screen flex-col">
     <div>
       <PageHeader>
-        <template #pageHeaderText>HOBBIES</template>
+        <template #pageHeaderText>PROJECTS</template>
       </PageHeader>
     </div>
     <div class="flex-grow bg-gray-200"></div>
