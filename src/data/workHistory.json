@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Software Engineer",
+    "companyLogo": "./src/assets/company-logo/frvr.png",
+    "companyName": "FRVR",
+    "duration": "June 2020 - Present",
+    "jobDetails": [
+      "Frontend roles: Designing and developing the internal portal application for FRVR, providing an exceptional user experience.",
+      "Automated Build and Deployment: Implementing pipelines to streamline the project's build and deployment process.",
+      "Microservices and Chatbots: Developing advanced filtering techniques to ensure targeted and personalized message distribution.",
+      "API Development and Authentication Services: Building authentication services and RESTful API endpoints using Node.js and Golang to enable in-app purchase verification.",
+      "Testing and Documentation: Writing comprehensive test cases and creating detailed documentation to facilitate team collaboration.",
+      "Game Development and User Experience: Enhancing the user experience of Krunker.io game and implementing new features to enhance the enjoyment of millions of players.",
+      "Cross-Channel Integration and Promotion: Seamlessly integrating H5 games into various channels and successfully launching cross-promotional features to improve game visibility.",
+      "Android App Integration and Updates: Integrating SDK into Android applications to achieve regular game updates and continuous improvements.",
+      "UI Design and Graphics Optimization: Contributing visually appealing icons, banners, and sprites to enhance the aesthetics of the game.",
+      "Workflow Optimization: Utilizing Python to efficiently package project files and modify specific content, simplifying the development process.",
+      "Improving User Satisfaction: Actively participating in the game experience team and continuously improving based on user feedback."
+    ]
+  },
+  {
+    "title": "DevOps Engineer",
+    "companyLogo": "./src/assets/company-logo/gbase.png",
+    "companyName": "GBase",
+    "duration": "Sep 2019 - Mar 2020",
+    "jobDetails": [
+      "Contributed to the development of GBase by delivering new features and functionalities to enhance the user experience.",
+      "Developed GBase adapters for different kernels, including MIPS, AARC, ARM, and x86, ensuring compatibility with a wide range of hardware architectures.",
+      "Wrote comprehensive unit tests to ensure the reliability and stability of GBase and implemented installation and maintenance services to provide continuous support to customers.",
+      "Collaborated with the development team to optimize performance and improve scalability of GBase, resulting in faster query processing and increased efficiency.",
+      "Conducted thorough code reviews and implemented code refactoring to ensure code quality and adherence to best practices, leading to a more maintainable and robust codebase for GBase."
+    ]
+  },
+  {
+    "title": "PTE Instructor / IT Support",
+    "companyLogo": "./src/assets/company-logo/wenbo.png",
+    "companyName": "Wenbo Education",
+    "duration": "Apr 2019 - Aug 2019",
+    "jobDetails": [
+      "Provided technical support to users and assisted in resolving various IT-related issues, ensuring that all systems and applications were running smoothly.",
+      "Conducted routine maintenance and updates on computer systems and network infrastructure, ensuring optimal performance and security.",
+      "Provided lessons that the students can understand and apply on their exams.",
+      "Provided guidance and advice on how to improve scores and addressing individual issues.",
+      "Used clear and concise lesson plans for quick learning.",
+      "Delivered Tips and Strategies."
+    ]
+  },
+  {
+    "title": "IT Support",
+    "companyLogo": "./src/assets/company-logo/sae.png",
+    "companyName": "SAE Institute",
+    "duration": "Nov 2017 - Jan 2018",
+    "jobDetails": [
+      "Collaborated to migrate and update the company's server rack.",
+      "Troubleshot and resolved computer hardware and software issues for staff and students.",
+      "Set up and configured workstations and peripherals, such as printers and projectors.",
+      "Maintained the inventory of IT equipment and ensured all items were up-to-date and accounted for.",
+      "Assisted with network administration tasks, including user account management and network security."
+    ]
+  }
+]

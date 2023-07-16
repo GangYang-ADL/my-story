@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import PageHeader from '@/components/PageHeader/PageHeader.vue'
 
-const toFRVRWebsite = () => {
-  window.open('https://frvr.com/', '_blank')
+const toResource = (url: string) => {
+  window.open(url, '_blank')
 }
 </script>
 
@@ -43,8 +43,11 @@ const toFRVRWebsite = () => {
           <div class="flow-root">
             <div class="my-4 text-justify text-2xl text-gray-700">
               Welcome to my personal website! My name is
-              <span class="text-3xl font-bold text-green-500">Gang Yang</span>, I am a full stack
-              developer based in Adelaide, South Australia.
+              <span
+                class="cursor-pointer text-2xl font-bold text-green-500"
+                @click="toResource('https://www.linkedin.com/in/gang-yang-8a394a142/')"
+                >Gang Yang</span
+              >, I am a full stack developer based in Adelaide, South Australia.
             </div>
           </div>
           <div class="flow-root">
@@ -53,8 +56,8 @@ const toFRVRWebsite = () => {
               Instructor but also in IT support roles at the very begining. However, I am truly
               grateful to
               <span
-                class="text-3xl font-bold text-green-500 hover:cursor-pointer"
-                @click="toFRVRWebsite"
+                class="text-2xl font-bold text-green-500 hover:cursor-pointer"
+                @click="toResource('https://frvr.com/')"
                 >FRVR</span
               >
               for giving me the opportunity to realize the joy that programming can bring and the
