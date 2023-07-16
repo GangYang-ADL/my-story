@@ -70,7 +70,10 @@ onBeforeUnmount(() => {
           <router-link
             :to="{ name: 'about' }"
             @click="handleSidebarStatusChange"
-            class="group mt-2 flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-200 hover:ring-2 hover:ring-green-500"
+            class="group mt-2 flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-300 hover:ring-2 hover:ring-green-500"
+            :class="{
+              'bg-gray-200 ring-2 ring-green-500': !isMobileMode && $route.name === 'about',
+            }"
           >
             <AboutMeIcon class="h-5 w-5" />
             <span class="ml-3">About</span>
@@ -80,7 +83,10 @@ onBeforeUnmount(() => {
           <router-link
             :to="{ name: 'experiences' }"
             @click="handleSidebarStatusChange"
-            class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-200 hover:ring-2 hover:ring-green-500"
+            class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-300 hover:ring-2 hover:ring-green-500"
+            :class="{
+              'bg-gray-200 ring-2 ring-green-500': !isMobileMode && $route.name === 'experiences',
+            }"
           >
             <ExperiencesIcon class="h-5 w-5" />
             <span class="ml-3 flex-1 whitespace-nowrap">Experience</span>
@@ -90,7 +96,10 @@ onBeforeUnmount(() => {
           <router-link
             :to="{ name: 'projects' }"
             @click="handleSidebarStatusChange"
-            class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-200 hover:ring-2 hover:ring-green-500"
+            class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-300 hover:ring-2 hover:ring-green-500"
+            :class="{
+              'bg-gray-200 ring-2 ring-green-500': !isMobileMode && $route.name === 'projects',
+            }"
           >
             <ProjectsIcon class="h-5 w-5" />
             <span class="ml-3 flex-1 whitespace-nowrap">Projects</span>
@@ -100,7 +109,10 @@ onBeforeUnmount(() => {
           <router-link
             :to="{ name: 'skills' }"
             @click="handleSidebarStatusChange"
-            class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-200 hover:ring-2 hover:ring-green-500"
+            class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-300 hover:ring-2 hover:ring-green-500"
+            :class="{
+              'bg-gray-200 ring-2 ring-green-500': !isMobileMode && $route.name === 'skills',
+            }"
           >
             <SkillsIcon class="h-5 w-5" />
             <span class="ml-3 flex-1 whitespace-nowrap">Skills</span>
@@ -110,7 +122,10 @@ onBeforeUnmount(() => {
           <router-link
             :to="{ name: 'hobbies' }"
             @click="handleSidebarStatusChange"
-            class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-200 hover:ring-2 hover:ring-green-500"
+            class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-300 hover:ring-2 hover:ring-green-500"
+            :class="{
+              'bg-gray-200 ring-2 ring-green-500': !isMobileMode && $route.name === 'hobbies',
+            }"
           >
             <LifeIcon class="h-5 w-5" />
             <span class="ml-3 flex-1 whitespace-nowrap">Hobbies</span>
