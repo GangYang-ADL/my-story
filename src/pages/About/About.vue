@@ -52,9 +52,8 @@ const toResource = (url: string) => {
           </div>
           <div class="flow-root">
             <div class="my-4 text-justify text-2xl text-gray-700">
-              Although my career has taken some twists and turns - I have worked not only as a PTE
-              Instructor but also in IT support roles at the very begining. However, I am truly
-              grateful to
+              Although my career has taken some twists and turns - from a PTE Instructor to a
+              software engineer role at the very beginning. However, I am truly grateful to
               <span
                 class="text-2xl font-bold text-green-500 hover:cursor-pointer"
                 @click="toResource('https://frvr.com/')"
@@ -67,7 +66,7 @@ const toResource = (url: string) => {
           </div>
           <div class="flow-root">
             <div class="my-4 text-justify text-2xl text-gray-700">
-              I am a highly-skilled software development professional with over 4 years of
+              Now, I am a highly-skilled software development professional with over 4 years of
               experience in JavaScript/TypeScript and Golang development. I have particular
               expertise in Vue.js, Docker, Kubernetes, RESTful API, and NoSQL database development.
             </div>

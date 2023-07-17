@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import PageHeader from '@/components/PageHeader/PageHeader.vue'
 import WorkHistoryCard from '@/components/WorkHistoryCard/WorkHistoryCard.vue'
-import workHistoryData from '@/data/workHistory.json'
+import workHistoryData from '@/data/work-history.json'
 </script>
 
 <template>
