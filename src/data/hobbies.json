@@ -1,0 +1,12 @@
+[
+  {
+    "name": "dota2",
+    "imgUrl": "src/assets/hobbies/dota2.jpeg",
+    "desc": "I have been playing this game for 10 years now, and I still love playing it. I have a deep passion for this game and I will watch the TI tournament every year. I believe it is the best game in the world."
+  },
+  {
+    "name": "NBA",
+    "imgUrl": "src/assets/hobbies/nba.png",
+    "desc": "I really enjoy playing basketball, and I am good at shooting three-pointers. Unfortunately, my height limits me from playing in the NBA. lol"
+  }
+]
