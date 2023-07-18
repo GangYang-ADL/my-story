@@ -38,7 +38,11 @@ const openModal = () => {
     class="relative max-w-2xl cursor-pointer grayscale filter transition-all duration-300 hover:grayscale-0"
   >
     <button @click="openModal">
-      <img class="rounded-lg" :src="`@/assets/hobbies/${props.imgUrl}`" alt="image description" />
+      <img
+        class="rounded-lg"
+        :src="`my-story/src/assets/hobbies/${props.imgUrl}`"
+        alt="image description"
+      />
     </button>
   </figure>
 </template>
