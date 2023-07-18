@@ -40,7 +40,7 @@ const openModal = () => {
     <button @click="openModal">
       <img
         class="rounded-lg"
-        :src="'./src/assets/hobbies/' + props.imgUrl"
+        :src="'assets/hobbies/' + props.imgUrl"
         alt="image description"
       />
     </button>
