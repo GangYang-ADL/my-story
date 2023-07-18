@@ -39,7 +39,7 @@ const openModal = () => {
   >
     <button @click="openModal">
       <img class="rounded-lg" src="@/assets/hobbies/nba.png" alt="image description" /> {{ 1 }}
-      <img class="rounded-lg" src="assets/hobbies/nba.png" alt="image description" /> {{ 2 }}
+      <img class="rounded-lg" src="/assets/hobbies/nba.png" alt="image description" /> {{ 2 }}
     </button>
   </figure>
 </template>
