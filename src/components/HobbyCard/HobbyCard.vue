@@ -39,9 +39,16 @@ const openModal = () => {
   >
     <button @click="openModal">
       <img
+        v-if="props.name === 'NBA'"
         class="rounded-lg"
-        :src="`my-story/src/assets/hobbies/${props.imgUrl}`"
-        alt="image description"
+        src="@/assets/hobbies/nba.png"
+        alt="nba"
+      />
+      <img
+        v-if="props.name === 'dota2'"
+        class="rounded-lg"
+        src="@/assets/hobbies/dota2.jpeg"
+        alt="dota 2"
       />
     </button>
   </figure>
