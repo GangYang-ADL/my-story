@@ -31,8 +31,6 @@ const openModal = () => {
   })
   document.body.appendChild(modal)
 }
-
-const nbaImgUrlString = '@/assets/hobbies/nba.png'
 </script>
 
 <template>
@@ -40,7 +38,8 @@ const nbaImgUrlString = '@/assets/hobbies/nba.png'
     class="relative max-w-2xl cursor-pointer grayscale filter transition-all duration-300 hover:grayscale-0"
   >
     <button @click="openModal">
-      <img class="rounded-lg" :src="`${nbaImgUrlString}`" alt="image description" />
+      <img class="rounded-lg" src="@/assets/hobbies/nba.png" alt="image description" /> {{ 1 }}
+      <img class="rounded-lg" src="assets/hobbies/nba.png" alt="image description" /> {{ 2 }}
     </button>
   </figure>
 </template>
