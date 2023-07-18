@@ -16,7 +16,7 @@ const toResource = (url: string) => {
         <div class="md:flex-shrink-0">
           <div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow">
             <a href="#">
-              <img class="rounded-t-lg" src="@/assets/avatar.jpg" alt="" />
+              <img class="rounded-t-lg" src="@/assets/hobbies/nba.png" alt="" />
             </a>
             <div class="p-5">
               <blockquote class="text-xl font-semibold italic text-gray-900">
