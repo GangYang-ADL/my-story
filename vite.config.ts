@@ -5,7 +5,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/my-story',
+  base: '/my-story/.dist/',
   plugins: [vue(), svgLoader()],
   resolve: {
     alias: {
