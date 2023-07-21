@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vue-tsc && vite build",
-    "deploy": "cd dist && cp index.html 404.html && cd .. && gh-pages -d dist",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "copy": "cd dist && cp index.html 404.html && cd .."
   },
   "dependencies": {
     "flowbite": "^1.7.0",
