@@ -11,6 +11,10 @@ export default {
         170: '42.5rem',
         190: '48rem',
       },
+      height: {
+        160: '40rem',
+        170: '42.5rem',
+      },
       colors: {
         Framework: '#4F4F4F',
         Engine: '#2F4F4F',

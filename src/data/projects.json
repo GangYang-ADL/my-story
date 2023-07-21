@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Golddigger FRVR",
+    "description": "A H5 gold digger game which I was contributed to at FRVR.",
+    "url": "https://golddigger.frvr.com/",
+    "img": "golddigger.png",
+    "repo": ""
+  },
+  {
+    "name": "ele",
+    "description": "Food delivery app that allow users to order food online.",
+    "url": "",
+    "img": "ele.png",
+    "repo": "https://github.com/GangYang-ADL/ele"
+  },
+  {
+    "name": "Search Aggregator",
+    "description": "Search aggregator searching results from multiple collections.",
+    "url": "",
+    "img": "search.png",
+    "repo": "https://github.com/GangYang-ADL/search-agg"
+  }
+]
