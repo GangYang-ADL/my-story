@@ -12,6 +12,11 @@ Using Vue 3 as the front-end framework to init this project.
 Headless UI is a set of entirely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.  
 However, [Flowbite](https://flowbite.com/) has more UI components ready to be used than [headless UI](https://headlessui.com/).
 
+# Run it locally by running
+```
+npm run dev
+```
+
 # Visit it online at
 
 www.gangyangmas.com
