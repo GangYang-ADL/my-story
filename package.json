@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vue-tsc && vite build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "cd dist && cp index.html 404.html && cd .. && gh-pages -d dist",
     "preview": "vite preview",
     "lint": "eslint ."
   },
