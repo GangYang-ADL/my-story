@@ -11,7 +11,24 @@ const { name, description, url, img, repo } = defineProps({
 <template>
   <div class="container mx-auto">
     <div class="max-w-xs rounded-lg bg-white p-4 shadow-lg">
-      <img :src="`./src/assets/projects/${img}`" alt="Project Image" class="object-fit" />
+      <img
+        v-if="name === 'Golddigger FRVR'"
+        src="@/assets/projects/golddigger.png"
+        alt="Project Image"
+        class="object-fit"
+      />
+      <img
+        v-if="name === 'ele'"
+        src="@/assets/projects/ele.png"
+        alt="Project Image"
+        class="object-fit"
+      />
+      <img
+        v-if="name === 'Search Aggregator'"
+        src="@/assets/projects/search.png"
+        alt="Project Image"
+        class="object-fit"
+      />
       <h2 class="mb-2 mt-2 text-xl font-bold">{{ name }}</h2>
       <p class="mb-4 text-gray-600">{{ description }}</p>
       <div class="flex justify-between">

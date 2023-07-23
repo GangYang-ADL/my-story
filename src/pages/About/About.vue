@@ -11,9 +11,9 @@ const toResource = (url: string) => {
     <PageHeader>
       <template #pageHeaderText>ABOUT</template>
     </PageHeader>
-    <div class="flex-grow overflow-y-auto pl-2 pr-2 pt-12 md:ml-48">
+    <div class="flex-grow overflow-y-auto pl-2 pr-2 pt-12">
       <div class="flex flex-col md:flex-row">
-        <div class="md:flex-shrink-0">
+        <div class="mx-auto max-w-6xl md:mr-4 md:flex-shrink-0">
           <div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow">
             <a href="#">
               <img class="rounded-t-lg" src="@/assets/avatar.jpg" alt="" />
@@ -39,7 +39,7 @@ const toResource = (url: string) => {
             </div>
           </div>
         </div>
-        <div class="md:ml-6 md:w-170">
+        <div class="max-w-6xl md:mx-auto md:ml-4 md:w-170">
           <div class="flow-root">
             <div class="my-4 text-justify text-2xl text-gray-700">
               Welcome to my personal website! My name is

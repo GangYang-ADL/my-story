@@ -35,21 +35,15 @@ const openModal = () => {
 
 <template>
   <figure
-    class="relative max-w-2xl cursor-pointer grayscale filter transition-all duration-300 hover:grayscale-0"
+    class="relative flex max-w-2xl cursor-pointer justify-center grayscale filter transition-all duration-300 hover:grayscale-0"
   >
     <button @click="openModal">
-      <img
-        v-if="props.name === 'NBA'"
-        class="rounded-lg"
-        src="@/assets/hobbies/nba.png"
-        alt="nba"
-      />
-      <img
-        v-if="props.name === 'dota2'"
-        class="rounded-lg"
-        src="@/assets/hobbies/dota2.jpeg"
-        alt="dota 2"
-      />
+      <div v-if="props.name === 'NBA'">
+        <img class="rounded-lg" src="@/assets/hobbies/nba.png" alt="nba" />
+      </div>
+      <div v-if="props.name === 'dota2'">
+        <img class="rounded-lg" src="@/assets/hobbies/dota2.jpeg" alt="dota 2" />
+      </div>
     </button>
   </figure>
 </template>

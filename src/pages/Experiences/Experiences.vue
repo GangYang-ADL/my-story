@@ -13,7 +13,7 @@ import workHistoryData from '@/data/work-history.json'
     </div>
     <div class="flex-grow bg-gray-200">
       <div class="mb-4 mt-4 flex justify-center">
-        <div class="mx-auto my-0 space-y-20">
+        <div class="my-0 space-y-20 p-6 md:mx-auto">
           <WorkHistoryCard
             v-for="workHistory in workHistoryData"
             :key="workHistory.companyName"
