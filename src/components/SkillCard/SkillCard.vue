@@ -22,7 +22,7 @@ const handleTabClick = (tabId: string) => {
     <ul class="-mb-px flex flex-wrap text-center text-sm font-medium" id="myTab" role="tablist">
       <li class="mr-2" role="presentation" v-for="(tab, index) in tabs" :key="index">
         <button
-          class="inline-block rounded-t-lg border-b-2 p-4 text-lg hover:border-green-500 hover:text-green-500"
+          class="inline-block rounded-t-lg border-b-2 p-4 text-xs hover:border-green-500 hover:text-green-500 md:text-xl"
           :class="{ 'border-green-500 text-green-500': activeTab === tab }"
           :id="`${tab}-tab`"
           type="button"
